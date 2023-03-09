@@ -19,22 +19,22 @@
     <meta name="description" content="关于 EMNLP&#39;14 论文《GloVe: Global Vectors for Word Representation》的阅读笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GloVe论文笔记">
-<meta property="og:url" content="http://example.com/glove_paper_notes/index.html">
+<meta property="og:url" content="https://ymliucs.github.io/glove_paper_notes/index.html">
 <meta property="og:site_name" content="Yumeng Liu&#39;s Blog">
 <meta property="og:description" content="关于 EMNLP&#39;14 论文《GloVe: Global Vectors for Word Representation》的阅读笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/figures/glove_paper_notes/co-occurrence-matrix.png">
-<meta property="og:image" content="http://example.com/figures/glove_paper_notes/glove_example.png">
-<meta property="og:image" content="http://example.com/figures/glove_paper_notes/glove_weight_f.png">
-<meta property="og:image" content="http://example.com/figures/glove_paper_notes/word_analogies.png">
-<meta property="og:image" content="http://example.com/figures/glove_paper_notes/word_similarity.png">
-<meta property="og:image" content="http://example.com/figures/glove_paper_notes/ner.png">
+<meta property="og:image" content="https://ymliucs.github.io/figures/glove_paper_notes/co-occurrence-matrix.png">
+<meta property="og:image" content="https://ymliucs.github.io/figures/glove_paper_notes/glove_example.png">
+<meta property="og:image" content="https://ymliucs.github.io/figures/glove_paper_notes/glove_weight_f.png">
+<meta property="og:image" content="https://ymliucs.github.io/figures/glove_paper_notes/word_analogies.png">
+<meta property="og:image" content="https://ymliucs.github.io/figures/glove_paper_notes/word_similarity.png">
+<meta property="og:image" content="https://ymliucs.github.io/figures/glove_paper_notes/ner.png">
 <meta property="article:published_time" content="2023-03-08T11:49:57.147Z">
 <meta property="article:modified_time" content="2023-03-09T08:22:10.753Z">
 <meta property="article:author" content="Yumeng Liu">
 <meta property="article:tag" content="embedding">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/figures/glove_paper_notes/co-occurrence-matrix.png">
+<meta name="twitter:image" content="https://ymliucs.github.io/figures/glove_paper_notes/co-occurrence-matrix.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -78,7 +78,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"ymliucs.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -497,7 +497,7 @@ GloVe 在命名实体识别任务上的表现
   <div class="license-box my-3">
     <div class="license-title">
       <div>GloVe论文笔记</div>
-      <div>http://example.com/glove_paper_notes/</div>
+      <div>https://ymliucs.github.io/glove_paper_notes/</div>
     </div>
     <div class="license-meta">
       
