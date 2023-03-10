@@ -4,7 +4,7 @@
   
   
   <entry>
-    <title>GloVe论文笔记</title>
+    <title>GloVe 论文笔记</title>
     <link href="/glove_paper_notes/"/>
     <url>/glove_paper_notes/</url>
     
@@ -29,11 +29,61 @@
   
   
   <entry>
-    <title>LINUX常用命令</title>
+    <title>Python 进阶</title>
+    <link href="/python_advance/"/>
+    <url>/python_advance/</url>
+    
+    <content type="html"><![CDATA[<p>Python 进阶技术学习笔记 <span id="more"></span></p><h2 id="python--m-和python--u">python -m 和python -u</h2><h3 id="python--m">python -m</h3><p>现有路径/home/ymliu/data/csyngec/supar/cmds/crf_con.py</p><p>我们在目录csyngec下，运行 <code>python -m supar.cmds.crf_con</code> 与 运行 <code>python supar/cmds/crf_con.py</code> 一样</p><p>区别是 python -m 的系统路径是 /home/ymliu/data/csyngec，而 python只有cmds 下的系统路径/home/ymliu/data/csyngec/supar/cmds/</p><p>这样前者可以用 csyngec 目录下的其他包而后者会报错</p><h3 id="python--u">python -u</h3><p>和 nohub 命令一起使用，输出不缓存。本来程序的输出要延迟一会输出到 nohub 保存的文件中，使用 python -u 可以保证 nohub 文件记录和 python 程序输出同步</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>PYTHON</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Conda 常用命令</title>
+    <link href="/conda_common_comands/"/>
+    <url>/conda_common_comands/</url>
+    
+    <content type="html"><![CDATA[<p>Conda 常用命令记录，不用老去搜索啦！ <span id="more"></span></p><h2 id="添加和删除本地文件夹到-conda-环境">添加和删除本地文件夹到 conda 环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda develop /home/ymliu <span class="hljs-comment"># 添加</span><br>conda develop /home/ymliu --uninstall <span class="hljs-comment"># 删除</span><br></code></pre></td></tr></table></figure><h2 id="打包-conda-环境">打包 conda 环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip install conda-pack<br>conda pack -n lgesql <br>conda pack -n lgesql --ignore-editable-packages <span class="hljs-comment"># 允许打包编辑过的包</span><br>scp -r lgesql.tar.gz ymliu@10.10.80.61:/home/ymliu/<br><br><span class="hljs-comment"># 在anaconda3的envs文件夹下创建lgesql文件夹，把lgesql.tar.gz移动到里面并解压</span><br>tar -zxvf lgesql.tar.gz <br>conda info -e <span class="hljs-comment"># 查看是否移植成功</span><br></code></pre></td></tr></table></figure><h2 id="换源">换源</h2><h3 id="查看源">查看源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda config --show channels<br></code></pre></td></tr></table></figure><h3 id="添加源">添加源</h3><p>打开 ~/.condarc</p><h4 id="清华源">清华源</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs text">channels:<br>  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/<br>  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/<br>  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/<br>  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/<br>ssl_verify: true<br></code></pre></td></tr></table></figure><h4 id="中科大源">中科大源</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs text">channels:<br>  - https://mirrors.ustc.edu.cn/anaconda/pkgs/main/<br>  - https://mirrors.ustc.edu.cn/anaconda/pkgs/free/<br>  - https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/<br>ssl_verify: true<br></code></pre></td></tr></table></figure><h4 id="上交大源">上交大源</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs text">channels:<br>  - https://mirrors.sjtug.sjtu.edu.cn/anaconda/pkgs/main/<br>  - https://mirrors.sjtug.sjtu.edu.cn/anaconda/pkgs/free/<br>  - https://mirrors.sjtug.sjtu.edu.cn/anaconda/cloud/conda-forge/<br>ssl_verify: true<br></code></pre></td></tr></table></figure><h3 id="删除所有源">删除所有源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda config --remove-key channels<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>LINUX</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>conda</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>LINUX 常用命令</title>
     <link href="/linux_common_comands/"/>
     <url>/linux_common_comands/</url>
     
-    <content type="html"><![CDATA[<p>LINUX常用命令记录，不用老去搜索啦！ <span id="more"></span></p><h2 id="指定gpu">指定GPU</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">CUDA_VISIBLE_DEVICES=<br></code></pre></td></tr></table></figure><h2 id="根据进程号查询">根据进程号查询</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ps -ef | grep <br>ps -ef | grep python <span class="hljs-comment"># 查询正在运行的python程序</span><br></code></pre></td></tr></table></figure><ul><li>ps 表示 process status 命令，查看系统的进程状态。-e 表示显示所有进程，-f 表示全格式。</li><li>| 表示管道符，把前一个命令的输出作为下一个命令的输入。</li><li>grep 表示 Globally search a Regular Expression and Print 命令。</li></ul><h2 id="批量删除指定后缀文件">批量删除指定后缀文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">find . -name <span class="hljs-string">&quot;*.xml&quot;</span> -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">rm</span> -f &#123;&#125; \;<br></code></pre></td></tr></table></figure><h2 id="查看当前文件夹下各目录大小">查看当前文件夹下各目录大小</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">du</span> -h --max-depth=1<br></code></pre></td></tr></table></figure><h2 id="无root权限安装软件">无root权限安装软件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">tar -zxvf software.tar.gz <span class="hljs-comment"># 解压.tar.gz到当前目录</span><br><span class="hljs-built_in">cd</span> software<br><span class="hljs-built_in">mkdir</span> <span class="hljs-built_in">link</span> <span class="hljs-comment"># 新建一个文件夹用于存放安装的软件</span><br>./configure --prefix=/home/ymliu/local/software/link<br>make &amp;&amp; make install<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>LINUX 常用命令记录，不用老去搜索啦！ <span id="more"></span></p><h2 id="指定gpu">指定GPU</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">CUDA_VISIBLE_DEVICES=<br></code></pre></td></tr></table></figure><h2 id="根据进程号查询">根据进程号查询</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ps -ef | grep <br>ps -ef | grep python <span class="hljs-comment"># 查询正在运行的python程序</span><br></code></pre></td></tr></table></figure><ul><li>ps 表示 process status 命令，查看系统的进程状态。-e 表示显示所有进程，-f 表示全格式。</li><li>| 表示管道符，把前一个命令的输出作为下一个命令的输入。</li><li>grep 表示 Globally search a Regular Expression and Print 命令。</li></ul><h2 id="批量删除指定后缀文件">批量删除指定后缀文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">find . -name <span class="hljs-string">&quot;*.xml&quot;</span> -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">rm</span> -f &#123;&#125; \;<br></code></pre></td></tr></table></figure><h2 id="查看当前文件夹下各目录大小">查看当前文件夹下各目录大小</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">du</span> -h --max-depth=1<br></code></pre></td></tr></table></figure><h2 id="无root权限安装软件">无root权限安装软件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">tar -zxvf software.tar.gz <span class="hljs-comment"># 解压.tar.gz到当前目录</span><br><span class="hljs-built_in">cd</span> software<br><span class="hljs-built_in">mkdir</span> <span class="hljs-built_in">link</span> <span class="hljs-comment"># 新建一个文件夹用于存放安装的软件</span><br>./configure --prefix=/home/ymliu/local/software/link<br>make &amp;&amp; make install<br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
@@ -54,7 +104,7 @@
   
   
   <entry>
-    <title>RAT-SQL论文复现——bug总结与完整复现流程</title>
+    <title>RAT-SQL 论文复现 —— bug 总结与完整复现流程</title>
     <link href="/run_ratsql_model/"/>
     <url>/run_ratsql_model/</url>
     
@@ -71,6 +121,31 @@
     <tags>
       
       <tag>text2sql</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>中文分字学习笔记</title>
+    <link href="/chinese_split_word/"/>
+    <url>/chinese_split_word/</url>
+    
+    <content type="html"><![CDATA[<p>HLT 基础编码练习（CIP），关于使用 GBK 和 UTF8 进行汉字编码的学习总结 <span id="more"></span></p><h2 id="gbkgb">1 GBK(GB)</h2><p>GBK 编码规则简述：</p><ul><li>使用 1-2 个字节表示一个字符，从左向右一个字节一个字节识别。</li><li>若当前字节首位为0，则该字符用 1 个字节表示( ASCII 字符)。</li><li>若当前字节首位为1，则该字符用 2 个字节表示(汉字)。</li></ul><p>列表如下：</p><table><thead><tr class="header"><th style="text-align: center;">1字节字符(ASCII 字符)</th><th style="text-align: center;">2字节字符(汉字)</th></tr></thead><tbody><tr class="odd"><td style="text-align: center;">0XXXXXXX</td><td style="text-align: center;">1XXXXXXX XXXXXXXX</td></tr></tbody></table><p>其中"X"代表0或1。</p><h2 id="utf8">2 UTF8</h2><p>UTF8编码规则简述：</p><ul><li>使用 1-6 个字节表示一个字符，从左向右一个字节一个字节识别。</li><li>若当前字节首位为 0，则该字符用 1 个字节表示( ASCII 字符，同 GBK )。</li><li>当字节数大于 2 时(此时表示汉字)，假设该字符有 n 个字节，该字符的表示与 n 的关系如下：<ul><li>首字节：前 n 位是 1，n+1 位是 0，后面任意。</li><li>其余 n-1 个字节，前两位必须是 10，后面任意。</li></ul></li></ul><p>注意汉字的编码前面至少有 <strong>2</strong> 个 1 (有几个 1 就表示该汉字用几个字节表示)。</p><p>列表如下：</p><table style="width:100%;"><thead><tr class="header"><th style="text-align: center;">1字节字符(ASCII字符)</th><th style="text-align: center;">2字节字符(汉字)</th><th style="text-align: center;">3字节字符(汉字)</th><th style="text-align: center;">4字节字符(汉字)</th><th style="text-align: center;">5字节字符(汉字)</th><th style="text-align: center;">6字节字符(汉字)</th></tr></thead><tbody><tr class="odd"><td style="text-align: center;">0XXXXXXX</td><td style="text-align: center;">110XXXXX<br>10XXXXXX</td><td style="text-align: center;">1110XXXX<br>10XXXXXX<br>10XXXXXX</td><td style="text-align: center;">11110XXX<br>10XXXXXX<br>10XXXXXX<br>10XXXXXX</td><td style="text-align: center;">111110XX<br>10XXXXXX<br>10XXXXXX<br>10XXXXXX<br>10XXXXXX</td><td style="text-align: center;">1111110X<br>10XXXXXX<br>10XXXXXX<br>10XXXXXX<br>10XXXXXX<br>10XXXXXX</td></tr></tbody></table><h2 id="参考文献">参考文献</h2><p>[1] <a href="http://hlt.suda.edu.cn/images/9/9d/Chinese-encoding.pdf">李老师的讲义-Chinese-encoding</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>NLP</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>cip</tag>
       
     </tags>
     
